@@ -1,18 +1,28 @@
-let a: number | string = 12;
-a="hello"
-a.toLowerCase
+type User= {
+    userName:string,
+    age:number,
+    course:string
+    gender?:string  //gender is optional
 
-let check:boolean
-
-
-let arr :number [] = [1,2] ;
-arr.push(3)
-console.log(a)
+}
 
 
-let arr2:Array<string> = ["salman",]  //second way of cratinf arrays with any type same as generics
+// interface is same as type but it can be inherited
+interface Users {
+    userName:string,
+    age:number,
+    course:string
+    gender?:string  //gender is optional
 
-// creating touple ins ts fixed size array
+}
 
+interface latestUser extends User{
+    email:string
+}
 
-let arr3 :[number,number,string] = [1,2,"salman"]   //create a array called touple with fixed size of 3
+const user1 : latestUser={
+    userName:"salman",
+    age:21,
+    course:"BCA",
+    email:"salman@gmail.com"
+}
