@@ -18,3 +18,22 @@ form.onsubmit = (e )=>{
 
     body.appendChild(h2)
 }
+
+interface person{
+    name: string,
+    age: number,
+}
+
+let newPerson : person={
+    name: "john",
+    age: 30
+}
+let key ="age"
+console.log(newPerson[key as keyof person])
+
+const fun=(key : keyof person):string | number=>{
+    return newPerson[key]
+}
+
+
+console.log(fun("name"))
