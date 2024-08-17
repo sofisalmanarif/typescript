@@ -35,3 +35,40 @@ const admin1 =new Admin("sofi@gamail.com","salman",true)
 user1.setEmail="salman@gmail.com"
 console.log(admin1.getEmail)
 console.log(admin1)
+
+
+//---------------------------------------------------------------
+//interfaces
+
+
+interface productype{
+    name:string;
+    price:number;
+    description:string;
+    stock:number;
+}
+
+
+class Product implements productype{
+    name:string;
+    price:number;
+    description:string;
+    stock:number;
+    private id : string;
+
+    constructor( name:string,
+        price:number,
+        description:string,
+        stock:number,
+    ){
+            this.name = name;
+            this.price=price;
+            this.description=description;
+            this.stock=stock;
+            this.id=String(Math.random())
+
+    }
+}
+
+const product  =  new Product("macbook",28888,"mac is good ",4)
+console.log(product)
