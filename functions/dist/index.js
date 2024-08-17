@@ -32,4 +32,24 @@ const gen = yeildFun(2, 3, 4, 5, 6);
 for (let item of gen) {
     console.log(item);
 }
-//-------------------------------------------------------------
+const getData = (product) => {
+    console.log(product);
+};
+const newProduct = {
+    name: "macbook",
+    price: 100000,
+    quantity: 10
+};
+getData(newProduct);
+const getUser = (user) => {
+    return {
+        status: true,
+        token: "string",
+        userName: "string",
+    };
+};
+const newUser = {
+    email: "salman@gmail.com",
+    password: "123456"
+};
+console.log(getUser(newUser));

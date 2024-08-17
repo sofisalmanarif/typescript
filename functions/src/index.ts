@@ -41,7 +41,14 @@ const myfun3:funType =(a,b,c=10)=>{
     return a+b+c
 }
 
+
 console.log(myfun3(12,3))
+
+// with function keyword we have to use type like this
+// const test:newfunType =function sum(n,m,l){
+//     return n*m
+// }
+
 
 //-------------------------------------------------------------
 //rest in ts
@@ -74,3 +81,62 @@ for(let item of gen){
 
 
 //-------------------------------------------------------------
+
+//Function with objects
+type product ={
+    name:string,
+    price:number,
+    quantity:number
+}
+
+type getdataType = (product:product)=>void;
+
+const getData :getdataType=(product)=>{
+    console.log(product)
+}
+
+const newProduct :product ={
+    name:"macbook",
+    price:100000,
+    quantity:10
+}
+
+
+getData(newProduct)
+
+
+interface User{
+    email:string,
+    password:string
+}
+
+type myResponse ={
+    status:boolean,
+    readonly token:string;    //now token is readonly
+    userName:string;
+}
+
+type myError ={
+    status:boolean,
+    message:string,
+
+}
+
+type GetUserType =(user:User)=>myResponse |myError
+
+const getUser :GetUserType =(user)=> {
+    return {
+        status:true,
+        token:"string",
+        userName:"string",
+    }
+}
+
+const newUser :User ={
+    
+    email:"salman@gmail.com",
+    password:"123456"
+}
+
+
+console.log(getUser(newUser))
