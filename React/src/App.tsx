@@ -1,4 +1,5 @@
 import './App.css'
+import Box from './components/Box'
 
 function App() {
 
@@ -6,7 +7,7 @@ function App() {
   return (
     <>
     <div>
-      hay
+      <Box name='salman' age={23} />
     </div>
     </>
   )
