@@ -18,10 +18,11 @@ button.onclick= ()=>{
     isCompleated:false
   }
   todos.push(newTodo)
+  input.value=""
   displayTodos(todos)
 }
 
-const displayTodos =(todos:todos[])=>{
+const displayTodos =(todos:Todo[])=>{
   container.innerHTML=""
   todos.forEach(item=>generate(item.id,item.title,item.isCompleated))
 }
@@ -37,6 +38,14 @@ const generate = (id:string,title:string,isCompleated:boolean)=>{
   const checkbox = document.createElement("input") as HTMLInputElement
   checkbox.type = "checkbox"
   checkbox.checked = isCompleated
+
+  checkbox.onchange =()=>{
+     todos.find(item=>{
+        if(item.id ===id){
+          item.isCompleated = checkbox.checked
+        }
+    })
+  }
   para.innerText = title
   dltbtn.innerText = "Delete"
   // console.log(id)
