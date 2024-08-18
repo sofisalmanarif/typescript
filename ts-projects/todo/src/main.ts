@@ -51,6 +51,8 @@ const generate = (id:string,title:string,isCompleated:boolean)=>{
 
 const deletehandler =(id:string):void=>{
     console.log("first",id)
-     todos.filter((todo)=>{todo.id === id})
-    displayTodos(newTodos)
+     const idx = todos.findIndex((todo)=>todo.id === id)
+    todos.splice(idx,1)
+    console.log(idx)
+    displayTodos(todos)
 }
