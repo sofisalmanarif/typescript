@@ -1,0 +1,66 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+#app{
+  display: flex;
+  align-items: center;
+  
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+h1{
+  font-size: 5rem;
+}
+.todo-input{
+  width: 600px;
+  padding: 1rem;
+}
+button{
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  margin-left: 14px;
+}
+
+.container{
+  /* background-color: red; */
+  width: 54vw;
+  margin-top: 5rem;
+  
+}
+
+.todo-div{
+  display: flex;
+  /* background-color: red; */
+  align-items: center;
+  justify-content: space-between;
+  width: 98%;
+  margin: 1rem 0rem;
+  gap: 1rem;
+  padding-left:1.13rem;
+  flex-shrink: inherit;
+}
+.todo-div p{
+  width: 90%;
+}
+.todo-div button{
+  background-color: red;
+  outline: none;
+  border: none;
+}
