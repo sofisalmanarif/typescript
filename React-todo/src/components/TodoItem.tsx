@@ -1,12 +1,18 @@
+import { useDispatch } from "react-redux";
 import { Todo } from "../vite-env"
+import { deleteTodo } from "../redux/Store";
 
 interface TodoItemProps {
   todo: Todo;
 }
 const TodoItem : React.FC<TodoItemProps>= ({todo}) => {
   console.log(todo.isCompleted)
+
+  const dispatch = useDispatch()
+  
   const deleteHandler =(id:string)=>{
     console.log(id)
+    dispatch(deleteTodo(todo.id))
   }
 
   return (
