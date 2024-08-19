@@ -1,9 +1,9 @@
 /// <reference types="vite/client" />
 
 
-export  type Todo ={
+export  interface Todo {
     id: string,
     title:string,
-    isCompleated:boolean
+    isCompleted:boolean
 
 }
