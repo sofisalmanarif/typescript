@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react"
  import TodoItem from "./components/TodoItem.tsx"
 import { Todo } from "./vite-env"
+import { useDispatch, useSelector } from "react-redux"
+import { addTodo, RootState } from "./redux/Store.ts"
 
 
 function App() {
     const [todo, setTodo] = useState<string>("")
-    const [todos,setTodos] = useState<Todo[]>([])
+    
+    const dispatch = useDispatch()
+
+    const data = useSelector((state:RootState)=>state.todo)
+    console.log("hay",data)
+    
 
     const addTodoHandler =()=>{
 
@@ -14,14 +21,15 @@ function App() {
         title:todo,
         isCompleted:false
       }
-      setTodos([...todos,newTodo])
+      
+      dispatch(addTodo(newTodo))
       
     }
     useEffect(() => {
       
-      console.log(todos)
+     
       
-    }, [todos])
+    }, [data])
     
   return (
     <>
@@ -33,7 +41,7 @@ function App() {
         <button onClick={addTodoHandler} className="bg-blue-400 text-white px-5 py-2 rounded-md">Add</button> </div>
         <div className="my-10  w-[100%] px-10">
           {
-            todos.map((todo:Todo)=>(
+            data.map((todo:Todo)=>(
               <TodoItem key={todo.id} todo={todo} />
             ))
           }
