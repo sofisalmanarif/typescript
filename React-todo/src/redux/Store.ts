@@ -16,12 +16,16 @@ export const TodoSlice = createSlice({
     },
     deleteTodo:(state,action:PayloadAction<string>) :Todo[]=>{
       return state.filter((todo:Todo)=>todo.id !== action.payload)
+    },
+    updateTodo:(state,action:PayloadAction<Todo>) =>{
+      const index =  state.findIndex((todo:Todo)=>todo.id === action.payload.id)
+      if(index !== -1) state[index] =  action.payload
     }
   }
 })
 
 
-export const {addTodo ,deleteTodo}= TodoSlice.actions
+export const {addTodo ,deleteTodo,updateTodo}= TodoSlice.actions
 export default TodoSlice.reducer
 
 
