@@ -11,7 +11,7 @@ function App() {
     const dispatch = useDispatch()
 
     const data = useSelector((state:RootState)=>state.todo)
-    console.log("hay",data)
+    // console.log("hay",data)
     
 
     const addTodoHandler =()=>{
