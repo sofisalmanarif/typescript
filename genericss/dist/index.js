@@ -9,3 +9,11 @@ const basics2 = (products) => {
     return products[0];
 };
 console.log(basics2(["name", "salman"]));
+// generics with extends keyword
+function person(name, age) {
+    return {
+        name,
+        age
+    };
+}
+person("salman", 4);

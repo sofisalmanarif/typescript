@@ -13,3 +13,16 @@ const basics2 =<T>(products:T[]):T=>{
 }
 
 console.log(basics2(["name","salman"]))
+
+
+// generics with extends keyword
+
+function person<T,U extends number>(name:T,age:U):object{
+    return{
+        name,
+        age
+    }
+
+}
+
+person("salman",4)
