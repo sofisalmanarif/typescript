@@ -8,3 +8,8 @@ console.log(basic('hello'))
 
 
 // arrow functions with generics
+const basics2 =<T>(products:T[]):T=>{
+    return products[0]
+}
+
+console.log(basics2(["name","salman"]))
