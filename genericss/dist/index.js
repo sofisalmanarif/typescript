@@ -17,3 +17,13 @@ function person(name, age) {
     };
 }
 person("salman", 4);
+class sellable {
+    cart = [];
+    addToCart(product) {
+        this.cart.push(product);
+    }
+}
+const myCart = new sellable();
+myCart.addToCart({ name: "DSA", price: 4555 });
+myCart.addToCart({ code: "dfdfDSdnfhhA", discount: 4555 });
+console.log(myCart.cart);

@@ -26,3 +26,29 @@ function person<T,U extends number>(name:T,age:U):object{
 }
 
 person("salman",4)
+
+interface course {
+    name:string,
+    price:number
+}
+
+interface coupon{
+    code:string,
+    discount:string
+}
+
+
+class sellable <T>{
+
+public cart :T[]=[]
+
+public addToCart(product:T){
+    this.cart.push(product)
+}
+}
+
+const myCart = new sellable()
+
+myCart.addToCart({name:"DSA",price:4555})
+myCart.addToCart({code:"dfdfDSdnfhhA",discount:4555})
+console.log(myCart.cart)
